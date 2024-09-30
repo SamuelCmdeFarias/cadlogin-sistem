@@ -1,13 +1,24 @@
 <?php
-// Incluir arquivos de controlador necessários para çidar com diferentes funções
+    require 'controllers/AuthController.php';
+    require 'controllers/UserController.php';
+    require 'controllers/DashboardController.php';
  
-require 'controllers/AuthController.php';
-require 'controllers/UserController.php';
-require 'controllers/DashBoardController';
+    $authController = new AuthController();
+    $userController = new  UserController();
+    // $dashboardController = new DashboardController();
  
-$authController = new $AuthController();
-$userController = new $UserController();
-$dashboardController = new $DashboardController();
+    // coleta a ação da URL, se não ouver ação definida, usa 'login'como padrão
+    $action = $_GET['action'] ?? 'login'; //usa operadpor de coalecencia nula (??) para definir 'login' se 'action' não estiver presente
  
- 
+    switch ($action){
+        case 'login':
+            $authController->login();
+            break;
+        case 'register':
+            $userController->register();
+            break;
+        default:
+        $authController->login();
+        break;
+    }
 ?>

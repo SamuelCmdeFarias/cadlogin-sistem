@@ -1,6 +1,3 @@
 <?php
- 
-require 'routes.php';
- 
- 
+    require 'routes.php';
 ?>
