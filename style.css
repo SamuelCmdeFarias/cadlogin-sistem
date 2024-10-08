@@ -1,0 +1,7 @@
+body{
+    background-color: rgb(115, 239, 255);
+    
+}label{
+    position: absolute;
+    width: 100px;
+}
