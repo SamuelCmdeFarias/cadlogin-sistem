@@ -15,10 +15,10 @@
             $authController->login();
             break;
         case 'logout';
-            $DashboardController->logout();
-        break;
+            $authController->logout();
+            break;
         case 'register':
-            $userController->register();
+            $UserController->register();
             break;
         case 'dashboard';
             $dashboardController->index();
