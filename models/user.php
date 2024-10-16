@@ -33,4 +33,15 @@ class user
         return $stmt->FetchAll(PDO::FETCH_ASSOC);
     }
 
+    //Função responsavel pela atualização dos dados dos usuários na base de dados
+    public static function update($id, $data){
+        //Prepara uma consulta SQL para atualizar, nome, email e perfil com base no ID do usuario
+        $conn = Database::getConnection();
+        $stmt = $conn->prepare("UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id");
+
+        $data('id') = $id;
+
+        $stmt->execute($data);
+
+    }
 }
