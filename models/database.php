@@ -2,7 +2,7 @@
 class Database{
     private static $intance = null;
  
-    public static function getComnction (){
+    public static function getConnection (){
         if(!self::$intance){
             $host       = 'localhost';
             $db         = 'sistema_usuarios';
