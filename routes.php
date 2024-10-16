@@ -18,7 +18,7 @@
             $authController->logout();
             break;
         case 'register':
-            $UserController->register();
+            $userController->register();
             break;
         case 'dashboard';
             $dashboardController->index();

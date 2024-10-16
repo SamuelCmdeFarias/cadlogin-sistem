@@ -39,7 +39,7 @@ class user
         $conn = Database::getConnection();
         $stmt = $conn->prepare("UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id");
 
-        $data('id') = $id;
+        $data['id'] = $id;
 
         $stmt->execute($data);
 
